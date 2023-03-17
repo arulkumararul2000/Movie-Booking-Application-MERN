@@ -13,7 +13,7 @@ const Movies = () => {
  
   return (
     <Box margin={"auto"} marginTop={4}>
-  <Typography variant='h4' padding={2} textAlign='center' bgcolor={'#900C3F'} width="40%" color="white" margin={"auto"}>
+  <Typography variant='h4' padding={2} borderRadius={5} textAlign='center' bgcolor={'#900C3F'} width="40%" color="white" margin={"auto"}>
     All Movies
   </Typography>
   <Box width={"100%"} margin={'auto'} marginTop='5' display={"flex"} justifyContent='flex-start' flexWrap={'wrap'}>
