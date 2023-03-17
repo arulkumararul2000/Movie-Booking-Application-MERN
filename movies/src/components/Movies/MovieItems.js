@@ -13,8 +13,8 @@ const MovieItems = ({ title, releaseDate, posterUrl, id }) => {
   return (
     <Card
       sx={{
-        width: 250,
-        height: 320,
+        width: 230,
+        height: 420,
         margin: 2,
         borderRadius: 5,
         ":hover": {
@@ -22,8 +22,8 @@ const MovieItems = ({ title, releaseDate, posterUrl, id }) => {
         },
       }}
     >
-      <AspectRatio height={"50%"} width="100%">
-        <img sx={{ objectFit: "contain" }} src={posterUrl} alt={title} />
+      <AspectRatio minHeight={420} maxHeight={200}>
+        <img src={posterUrl} alt={title} />
       </AspectRatio>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
