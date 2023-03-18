@@ -16,6 +16,7 @@ import Typography from '@mui/joy/Typography';
 
 const MovieItems = ({ title, releaseDate, posterUrl, id }) => {
   return (
+    //db need to change
     // <Card
     //   sx={{
     //     width: 230,
