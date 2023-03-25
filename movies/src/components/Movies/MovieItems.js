@@ -51,114 +51,105 @@
 //         </Button>
 //       </CardActions>
 //     </Card>
-    // <Box
-    //   sx={{
-    //     perspective: '1000px',
-    //     transition: 'transform 0.4s',
-    //     '& > div, & > div > div': {
-    //       transition: 'inherit',
-    //     },
-    //     '&:hover': {
-    //       '& > div': {
-    //         transform: 'rotateY(30deg)',
-    //         '& > div:nth-child(2)': {
-    //           transform: 'scaleY(0.9) translate3d(20px, 30px, 40px)',
-    //         },
-    //         '& > div:nth-child(3)': {
-    //           transform: 'translate3d(45px, 50px, 40px)',
-    //         },
-    //       },
-    //     },
-    //   }}
-    // >
-    //   <Card
-    //     variant="outlined"
-    //     sx={{
-    //       minHeight: '280px',
-    //       width: 320,
-    //       backgroundColor: '#fff',
-    //       borderColor: '#000',
-    //     }}
-    //   >
-    //     <Typography level="h2" fontSize="lg" textColor="#000">
-    //       Card
-    //     </Typography>
-    //     <CardCover
-    //       sx={{
-    //         background:
-    //           'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
-    //         border: '1px solid',
-    //         borderColor: '#777',
-    //       }}
-    //     >
-    //       <Typography level="h2" fontSize="lg" textColor="#fff">
-    //         Card Cover
-    //       </Typography>
-    //     </CardCover>
-    //     <CardContent
-    //       sx={{
-    //         alignItems: 'self-end',
-    //         justifyContent: 'flex-end',
-    //         background: 'linear-gradient(to top, rgba(0,0,0,0.3), rgba(0,0,0,0.3))',
-    //         border: '1px solid',
-    //         borderColor: '#000',
-    //       }}
-    //     >
-    //       <Typography level="h2" fontSize="lg" textColor="#fff" m={3}>
-    //         Card Content
-    //       </Typography>
-    //     </CardContent>
-    //   </Card>
-    // </Box>
+// <Box
+//   sx={{
+//     perspective: '1000px',
+//     transition: 'transform 0.4s',
+//     '& > div, & > div > div': {
+//       transition: 'inherit',
+//     },
+//     '&:hover': {
+//       '& > div': {
+//         transform: 'rotateY(30deg)',
+//         '& > div:nth-child(2)': {
+//           transform: 'scaleY(0.9) translate3d(20px, 30px, 40px)',
+//         },
+//         '& > div:nth-child(3)': {
+//           transform: 'translate3d(45px, 50px, 40px)',
+//         },
+//       },
+//     },
+//   }}
+// >
+//   <Card
+//     variant="outlined"
+//     sx={{
+//       minHeight: '280px',
+//       width: 320,
+//       backgroundColor: '#fff',
+//       borderColor: '#000',
+//     }}
+//   >
+//     <Typography level="h2" fontSize="lg" textColor="#000">
+//       Card
+//     </Typography>
+//     <CardCover
+//       sx={{
+//         background:
+//           'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+//         border: '1px solid',
+//         borderColor: '#777',
+//       }}
+//     >
+//       <Typography level="h2" fontSize="lg" textColor="#fff">
+//         Card Cover
+//       </Typography>
+//     </CardCover>
+//     <CardContent
+//       sx={{
+//         alignItems: 'self-end',
+//         justifyContent: 'flex-end',
+//         background: 'linear-gradient(to top, rgba(0,0,0,0.3), rgba(0,0,0,0.3))',
+//         border: '1px solid',
+//         borderColor: '#000',
+//       }}
+//     >
+//       <Typography level="h2" fontSize="lg" textColor="#fff" m={3}>
+//         Card Content
+//       </Typography>
+//     </CardContent>
+//   </Card>
+// </Box>
 //   );
 // };
 
 // export default MovieItems;
 
-
-
-import * as React from 'react';
-import AspectRatio from '@mui/joy/AspectRatio';
-import Box from '@mui/joy/Box';
-import Card from '@mui/joy/Card';
-import CardCover from '@mui/joy/CardCover';
-import IconButton from '@mui/joy/IconButton';
-import Typography from '@mui/joy/Typography';
-import Link from '@mui/joy/Link';
-import Favorite from '@mui/icons-material/Favorite';
-import CreateNewFolder from '@mui/icons-material/CreateNewFolder';
+import * as React from "react";
+import AspectRatio from "@mui/joy/AspectRatio";
+import Box from "@mui/joy/Box";
+import Card from "@mui/joy/Card";
+import CardCover from "@mui/joy/CardCover";
+import Typography from "@mui/joy/Typography";
+import Button from '@mui/joy/Button';
+import Link from "@mui/joy/Link";
 
 const MovieItems = ({ title, releaseDate, posterUrl, id }) => {
   return (
     <Card
       sx={{
         width: 300,
-        bgcolor: 'initial',
-        boxShadow: 'none',
-        '--Card-padding': '0px',
+        bgcolor: "initial",
+        boxShadow: "none",
+        "--Card-padding": "0px",
       }}
     >
-      <Box sx={{ position: 'relative' }}>
+      <Box sx={{ position: "relative" }}>
         <AspectRatio ratio="3/4">
           <figure>
-            <img
-              src="https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&w=300"
-              srcSet="https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&w=300&dpr=2 2x"
-              loading="lazy"
-              alt="Yosemite by Casey Horner"
-            />
+            <img src={posterUrl} alt={title} />
           </figure>
         </AspectRatio>
         <CardCover
           className="gradient-cover"
           sx={{
-            '&:hover, &:focus-within': {
+            "&:hover, &:focus-within": {
               opacity: 1,
             },
             opacity: 0,
-            transition: '0.1s ease-in',
+            transition: "0.1s ease-in",
             background:
-              'linear-gradient(180deg, transparent 62%, rgba(0,0,0,0.00345888) 63.94%, rgba(0,0,0,0.014204) 65.89%, rgba(0,0,0,0.0326639) 67.83%, rgba(0,0,0,0.0589645) 69.78%, rgba(0,0,0,0.0927099) 71.72%, rgba(0,0,0,0.132754) 73.67%, rgba(0,0,0,0.177076) 75.61%, rgba(0,0,0,0.222924) 77.56%, rgba(0,0,0,0.267246) 79.5%, rgba(0,0,0,0.30729) 81.44%, rgba(0,0,0,0.341035) 83.39%, rgba(0,0,0,0.367336) 85.33%, rgba(0,0,0,0.385796) 87.28%, rgba(0,0,0,0.396541) 89.22%, rgba(0,0,0,0.4) 91.17%)',
+              "linear-gradient(180deg, transparent 62%, rgba(0,0,0,0.00645888) 63.94%, rgba(0,0,0,0.044204) 65.89%, rgba(0,0,0,0.0726639) 67.83%, rgba(0,0,0,0.1589645) 69.78%, rgba(0,0,0,0.1927099) 71.72%, rgba(0,0,0,0.232754) 73.67%, rgba(0,0,0,0.277076) 75.61%, rgba(0,0,0,0.322924) 77.56%, rgba(0,0,0,0.367246) 83.5%, rgba(0,0,0,0.40729) 85.44%, rgba(0,0,0,0.541035) 88.39%, rgba(0,0,0,0.567336) 90.33%, rgba(0,0,0,0.585796) 93.28%, rgba(0,0,0,0.596541) 95.22%, rgba(0,0,0,0.6) 95.17%)",
           }}
         >
           {/* The first box acts as a container that inherits style from the CardCover */}
@@ -166,40 +157,53 @@ const MovieItems = ({ title, releaseDate, posterUrl, id }) => {
             <Box
               sx={{
                 p: 2,
-                display: 'flex',
-                alignItems: 'center',
+                display: "block",
+                alignItems: "center",
                 gap: 1.5,
                 flexGrow: 1,
-                alignSelf: 'flex-end',
+                alignSelf: "flex-end",
               }}
             >
-              <Typography level="h2" noWrap sx={{ fontSize: 'lg' }}>
+              <Typography level="h2" noWrap sx={{ fontSize: "lg" }}>
                 <Link
-                  href="#dribbble-shot"
                   overlay
                   underline="none"
                   sx={{
-                    color: '#fff',
-                    textOverflow: 'ellipsis',
-                    overflow: 'hidden',
-                    display: 'block',
+                    color: "#fff",
+                    textOverflow: "ellipsis",
+                    overflow: "hidden",
+                    display: "block",
                   }}
                 >
-                  Yosemite
+                  {title}
                 </Link>
+                <Typography
+                  level="h5"
+                  noWrap
+                  sx={{
+                    fontSize: "sm",
+                    fontWeight: "400",
+                    color: "#fff",
+                    textOverflow: "ellipsis",
+                    overflow: "hidden",
+                    display: "block",
+                  }}
+                >
+                  {new Date(releaseDate).toDateString()}
+                </Typography>
+                <Button size="sm" variant="solid" color="neutral" fullWidth={true}>
+                  BOOK NOW
+                </Button>
               </Typography>
-              <IconButton size="sm" color="neutral" sx={{ ml: 'auto' }}>
-                <CreateNewFolder />
-              </IconButton>
-              <IconButton size="sm" color="neutral">
-                <Favorite />
-              </IconButton>
+            </Box>
+            <Box>
+              
             </Box>
           </Box>
         </CardCover>
       </Box>
     </Card>
   );
-}
+};
 
 export default MovieItems;
