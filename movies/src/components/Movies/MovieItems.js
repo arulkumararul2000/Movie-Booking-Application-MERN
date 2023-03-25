@@ -121,23 +121,25 @@ import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
 import CardCover from "@mui/joy/CardCover";
 import Typography from "@mui/joy/Typography";
-import Button from '@mui/joy/Button';
-import Link from "@mui/joy/Link";
+import Button from "@mui/joy/Button";
+import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const MovieItems = ({ title, releaseDate, posterUrl, id }) => {
   return (
     <Card
       sx={{
-        width: 300,
+        width: 225,
         bgcolor: "initial",
         boxShadow: "none",
-        "--Card-padding": "0px",
+        "--Card-padding": "10px",
+        "--Card-radius": "25px"
       }}
     >
-      <Box sx={{ position: "relative" }}>
+      <Box sx={{ position: "relative"}}>
         <AspectRatio ratio="3/4">
           <figure>
-            <img src={posterUrl} alt={title} />
+            <LazyLoadImage src={posterUrl} alt={title} />
           </figure>
         </AspectRatio>
         <CardCover
@@ -159,24 +161,23 @@ const MovieItems = ({ title, releaseDate, posterUrl, id }) => {
                 p: 2,
                 display: "block",
                 alignItems: "center",
-                gap: 1.5,
                 flexGrow: 1,
                 alignSelf: "flex-end",
               }}
             >
-              <Typography level="h2" noWrap sx={{ fontSize: "lg" }}>
-                <Link
-                  overlay
-                  underline="none"
-                  sx={{
-                    color: "#fff",
-                    textOverflow: "ellipsis",
-                    overflow: "hidden",
-                    display: "block",
-                  }}
-                >
-                  {title}
-                </Link>
+              <Typography
+                level="h2"
+                noWrap
+                underline="none"
+                sx={{
+                  color: "#fff",
+                  fontSize: "lg",
+                  textOverflow: "ellipsis",
+                  overflow: "hidden",
+                  display: "block",
+                }}
+              >
+                {title}
                 <Typography
                   level="h5"
                   noWrap
@@ -191,13 +192,18 @@ const MovieItems = ({ title, releaseDate, posterUrl, id }) => {
                 >
                   {new Date(releaseDate).toDateString()}
                 </Typography>
-                <Button size="sm" variant="solid" color="neutral" fullWidth={true}>
-                  BOOK NOW
-                </Button>
+                <Link to={`/booking/${id}`} style={{ textDecoration: "none" }}>
+                  <Button
+                    size="sm"
+                    variant="solid"
+                    color="neutral"
+                    sx={{ mt: 2 }}
+                    fullWidth={true}
+                  >
+                    BOOK NOW
+                  </Button>
+                </Link>
               </Typography>
-            </Box>
-            <Box>
-              
             </Box>
           </Box>
         </CardCover>
