@@ -31,7 +31,7 @@ const Movies = () => {
         marginTop="5"
         display={"flex"}
         justifyContent="center"
-        flexWrap={"wrap"}
+        flexWrap="wrap"
       >
         {Movies.map((item, idex) => (
           <MovieItems
