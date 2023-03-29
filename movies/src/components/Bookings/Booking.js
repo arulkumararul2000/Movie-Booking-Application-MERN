@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import React, { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMoviedetails, newBooking } from "../../api-helper/api-helpers";
+import "./Booking.css"
 const Booking = () => {
   const [movie, setMovie] = useState();
   const [inputs, setInputs] = useState({ seatNumber: "", date: "" });
@@ -45,22 +46,40 @@ const Booking = () => {
             {" " + movie.title}
           </Typography>
 
-          <Box display={"block"} justifyContent={"center"} paddingLeft={2}>
+          <Box
+            display="block"
+            justifyContent="center"
+            alignItems="center"
+            minHeight="100vh"
+            paddingLeft={2}
+            paddingRight={2}
+          >
             <Box
-              display={"block"}
+              display={"flex"}
               flexDirection="column"
               paddingLeft={2}
               paddingRight={2}
               flexGrow={1}
+              width={"auto"}
             >
-              <div justifyContent={"center"} width={"100%"}>
-                <img height={"300px"} src={movie.posterUrl} alt={movie.title} />
+              <div className="container">
+                <iframe className="responsive-iframe"
+                  width="560px"
+                  height="315px"
+                  display="block"
+                  justifyContent="center"
+                  src={movie.trailerUrl}
+                  title={movie.title}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
               </div>
-              <Box width={"80%"} marginTop={3}>
+              <Box width={"100%"} marginTop={1}>
                 <Typography paddingTop={2}> {movie.description}</Typography>
                 <Typography fontWeight={"bold"} marginTop={1}>
                   Starrer:
-                  {movie.actors.map((actor) => " " + actor + "")}
+                  {movie.actors.map((actor) => " " + actor + ",")}
                 </Typography>
 
                 <Typography fontWeight={"bold"} marginTop={1}>
@@ -68,7 +87,7 @@ const Booking = () => {
                 </Typography>
               </Box>
             </Box>
-            <Box width={"100%"} paddingTop={2} display="block" flexWrap="warp">
+            <Box width={"100%"} paddingTop={2}>
               <form onSubmit={handleSubmit}>
                 <Box
                   padding={2} // 1st
@@ -76,7 +95,7 @@ const Booking = () => {
                   display="flex"
                   flexDirection={"column"}
                 >
-                  <FormLabel>seat Number</FormLabel>
+                  <FormLabel>Seat Number</FormLabel>
                   <TextField
                     value={inputs.seatNumber}
                     onChange={handleChange}

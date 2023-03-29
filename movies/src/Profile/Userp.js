@@ -21,10 +21,10 @@ const Userp = () => {
     <Box width={'100%'} display='flex'>
 
      <Fragment>
-   {User && (<Box flexDirection={'column'} justifyContent="center" alignItems={"center"} width={'30%'} padding={3}>
-                <AccountCircleIcon sx={{fontSize:'10rem',textAlign:"center" , ml:3}}/>
-                <Typography padding={1} width={"auto"} textAlign={"center"} border={'1px solid #ccc'} borderRadius={6}> Name:{User.name}</Typography>
-                <Typography mt= {1} padding={1} width={"auto"} textAlign={"center"} border={'1px solid #ccc'} borderRadius={6}> Email:{User.email}</Typography>
+   {User && (<Box justifyContent="center" alignItems={"center"} width={'40%'} padding={3}>
+                <AccountCircleIcon sx={{fontSize:'10rem',textAlign:"center", ml:20}}/>
+                <Typography padding={1} width={"auto"} textAlign={"center"} border={'1px solid #ccc'} borderRadius={6}> Name: {User.name}</Typography>
+                <Typography mt= {1} padding={1} width={"auto"} textAlign={"center"} border={'1px solid #ccc'} borderRadius={6}> Email: {User.email}</Typography>
             </Box> )}
 
            { bookings &&  (   <Box width={'70%'} display="flex" flexDirection={"column"}>
