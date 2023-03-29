@@ -137,7 +137,7 @@ const MovieItems = ({ title, releaseDate, posterUrl, id }) => {
       }}
     >
       <Box sx={{ position: "relative"}}>
-        <AspectRatio ratio="3/4">
+        <AspectRatio ratio="5/6">
           <figure>
             <LazyLoadImage src={posterUrl} alt={title} />
           </figure>
@@ -151,7 +151,7 @@ const MovieItems = ({ title, releaseDate, posterUrl, id }) => {
             opacity: 0,
             transition: "0.1s ease-in",
             background:
-              "linear-gradient(180deg, transparent 62%, rgba(0,0,0,0.00645888) 63.94%, rgba(0,0,0,0.044204) 65.89%, rgba(0,0,0,0.0726639) 67.83%, rgba(0,0,0,0.1589645) 69.78%, rgba(0,0,0,0.1927099) 71.72%, rgba(0,0,0,0.232754) 73.67%, rgba(0,0,0,0.277076) 75.61%, rgba(0,0,0,0.322924) 77.56%, rgba(0,0,0,0.367246) 83.5%, rgba(0,0,0,0.40729) 85.44%, rgba(0,0,0,0.541035) 88.39%, rgba(0,0,0,0.567336) 90.33%, rgba(0,0,0,0.585796) 93.28%, rgba(0,0,0,0.596541) 95.22%, rgba(0,0,0,0.6) 95.17%)",
+              "linear-gradient(180deg, transparent 10%, rgba(0,0,0,0.00945888) 40.94%, rgba(0,0,0,0.084204) 45.89%, rgba(0,0,0,0.1426639) 50.83%, rgba(0,0,0,0.3089645) 55.78%, rgba(0,0,0,0.3827099) 60.72%, rgba(0,0,0,0.462754) 65.67%, rgba(0,0,0,0.557076) 70.61%, rgba(0,0,0,0.642924) 75.56%, rgba(0,0,0,0.727246) 80.5%, rgba(0,0,0,0.80729) 85.44%, rgba(0,0,0,0.951035) 90.39%, rgba(0,0,0,1.567336) 95.33%, rgba(0,0,0,1.985796) 96.28%, rgba(0,0,0,2.596541) 97.22%, rgba(0,0,0,2.8) 98.17%)",
           }}
         >
           {/* The first box acts as a container that inherits style from the CardCover */}
@@ -167,7 +167,6 @@ const MovieItems = ({ title, releaseDate, posterUrl, id }) => {
             >
               <Typography
                 level="h2"
-                noWrap
                 underline="none"
                 sx={{
                   color: "#fff",

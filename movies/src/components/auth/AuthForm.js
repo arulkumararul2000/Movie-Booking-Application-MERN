@@ -1,8 +1,10 @@
-import { Button, Dialog, FormLabel, IconButton, TextField, Typography } from '@mui/material'
+import { Button, Dialog, IconButton, TextField, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useState } from 'react'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-const labelStyle={mt:1,mb:1};
+
+
+
 const AuthForm = ({onSubmit ,isAdmin }) => {
     const [inputs, setinputs] = useState({
         name:"",

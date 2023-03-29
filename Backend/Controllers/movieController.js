@@ -25,14 +25,14 @@ const addMovies=async(req,res)=>{
         }
     })
 
-    const {title,description,releaseDate,posterUrl,featured,actors}=req.body;
+    const {title,description,releaseDate,posterUrl, trailerUrl,featured,actors}=req.body;
     console.log(req.body);
 
         if(res.status==400)
         {
             res.send("error");
         }
-    if(!title && title.trim() === "" && !description && description.trim()=== "" && !posterUrl&&posterUrl.trim()=== "")
+    if(!title && title.trim() === "" && !description && description.trim()=== "" && !posterUrl&&posterUrl.trim()=== "" && !trailerUrl && trailerUrl.trim()=== "")
     {
         return res.status(422).json({
             message:"Invalid Inputs"
@@ -46,6 +46,7 @@ const addMovies=async(req,res)=>{
             description,
             releaseDate: new Date(`${releaseDate}`),
             posterUrl,
+            trailerUrl,
             featured,
             admin:adminId,
             actors
