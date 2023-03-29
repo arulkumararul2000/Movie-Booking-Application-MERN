@@ -39,16 +39,16 @@ const AuthForm = ({onSubmit ,isAdmin }) => {
     </Typography>
     <form onSubmit={handleSubmit}>
         <Box display="flex" justifyContent={'center'} flexDirection='column' width={400} margin='auto' alignItems={'center'} padding={4}>
-           { !isAdmin &&isSignup &&<><FormLabel sx={labelStyle}>Name</FormLabel>
-            <TextField  value={inputs.name} onChange={handleChange}  variant='standard' margin='normal'  type={'text'} name='name'/> </>
+           { !isAdmin &&isSignup &&<>
+            <TextField  value={inputs.name} onChange={handleChange} label='Name'  variant='filled' fullWidth margin='normal'  type={'text'} name='name'/> </>
             
             }
 
 
-            <FormLabel sx={labelStyle}>Email</FormLabel>
-            <TextField value={inputs.email} onChange={handleChange} variant='standard' margin='normal'  type={'email'} name='email'/>
-            <FormLabel sx={labelStyle}>Password</FormLabel>
-            <TextField  value={inputs.password} onChange={handleChange}  variant='standard' margin='normal'  type={'password'} name='password'/>
+            
+            <TextField value={inputs.email} onChange={handleChange} label='Email' variant='filled' fullWidth margin='normal'  type={'email'} name='email'/>
+            
+            <TextField  value={inputs.password} onChange={handleChange} label='Password' fullWidth variant='filled' margin='normal'  type={'password'} name='password'/>
             <Button sx={{mt:2,borderRadius:10,bgcolor:'#2b2d42'}}type="submit" fullWidth variant='contained'> {isSignup?'Signup':'login'} </Button>
      {  !isAdmin &&    ( <Button onClick={()=>{
                 setisSignup(!isSignup)
