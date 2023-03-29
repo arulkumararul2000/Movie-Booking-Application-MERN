@@ -29,7 +29,7 @@ function App() {
     {
       dispatch(adminActions.login());
     }
-  },[])
+  })
   return (
     <div>
     {/* Header */}
