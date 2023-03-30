@@ -42,7 +42,7 @@ const Homepage = () => {
       >
         {movies &&
           movies
-            .slice(0, 4)
+            // .slice(0, 4)
             .map((item, index) => (
               <MovieItems
                 id={item.id}

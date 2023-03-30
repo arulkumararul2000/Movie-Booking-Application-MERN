@@ -1,6 +1,7 @@
 import { Button, Dialog, IconButton, TextField, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 
@@ -31,7 +32,7 @@ const AuthForm = ({onSubmit ,isAdmin }) => {
   return (
    <Dialog paperProps={{style:{borderRadius:20}}}open={true}>
    <Box sx={{ml:'auto',padding:1}}> 
-    <IconButton>
+    <IconButton LinkComponent={Link} to="/" >
         <CloseRoundedIcon/>
     </IconButton>
     
@@ -51,7 +52,7 @@ const AuthForm = ({onSubmit ,isAdmin }) => {
             <TextField value={inputs.email} onChange={handleChange} label='Email' variant='filled' fullWidth margin='normal'  type={'email'} name='email'/>
             
             <TextField  value={inputs.password} onChange={handleChange} label='Password' fullWidth variant='filled' margin='normal'  type={'password'} name='password'/>
-            <Button sx={{mt:2,borderRadius:10,bgcolor:'#2b2d42'}}type="submit" fullWidth variant='contained'> {isSignup?'Signup':'login'} </Button>
+            <Button sx={{mt:2,borderRadius:10,bgcolor:'#2b2d42'}} type="submit" fullWidth variant='contained'> {isSignup?'Signup':'login'} </Button>
      {  !isAdmin &&    ( <Button onClick={()=>{
                 setisSignup(!isSignup)
             }} sx={{mt:2,borderRadius:10}} fullWidth > Switch To {isSignup?"Login":"Signup"}</Button>)}
